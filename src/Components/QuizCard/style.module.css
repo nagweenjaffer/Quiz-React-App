@@ -1,0 +1,4 @@
+.answersSection {
+  display: flex;
+  flex-direction: column;
+}
