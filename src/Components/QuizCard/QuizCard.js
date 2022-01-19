@@ -2,8 +2,9 @@ import React from "react";
 import { questions } from "../../Questions/Questions";
 import { useState } from "react";
 import quizStyle from "./style.module.css";
+import { useEffect } from "react";
 
-const QuizCard = ({ score, setScore, setisQuiz, setisFinished }) => {
+const QuizCard = ({ score, setScore, setisQuiz, setisFinished,counter,setCounter }) => {
   const [currenetQuestion, setcurrenetQuestion] = useState(0);
 
   const handleClick = (option) => {
@@ -22,6 +23,15 @@ const QuizCard = ({ score, setScore, setisQuiz, setisFinished }) => {
       setisFinished(true);
     }
   };
+
+  useEffect(() => {
+    const timer = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+        if (timer == 0) {
+            setisQuiz(false);
+            setisFinished(true);
+        }
+    return () => clearInterval(timer);
+  }, [counter])
 
   return (
     <div>
