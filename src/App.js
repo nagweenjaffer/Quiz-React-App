@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./Components/Header/Header";
 import StartCard from "./Components/StartCard/StartCard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import QuizCard from "./Components/QuizCard/QuizCard";
 import FinishedCard from "./Components/FinsihedCard/FinishedCard";
 
@@ -11,10 +11,6 @@ function App() {
   const [isQuiz, setisQuiz] = useState(false);
   const [isFinished, setisFinished] = useState(false);
   const [score, setScore] = useState(0);
-
-  useEffect(() => {
-    counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-  }, [counter]);
 
   return (
     <div className="App">
