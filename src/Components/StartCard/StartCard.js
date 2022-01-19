@@ -1,7 +1,7 @@
 import React from "react";
 import cardStyle from "./style.module.css";
 
-const StartCard = ({ setisStart, setisQuiz }) => {
+const StartCard = ({ setGameState }) => {
   return (
     <div className={cardStyle.container}>
       <h1>Coding Quiz Challenge</h1>
@@ -16,8 +16,7 @@ const StartCard = ({ setisStart, setisQuiz }) => {
       <button
         className={cardStyle.btn}
         onClick={() => {
-          setisStart(false);
-          setisQuiz(true);
+          setGameState("quiz")
         }}
       >
         Start Quiz
