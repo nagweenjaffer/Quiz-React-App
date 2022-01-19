@@ -4,30 +4,38 @@ import StartCard from "./Components/StartCard/StartCard";
 import { useState } from "react";
 import QuizCard from "./Components/QuizCard/QuizCard";
 import FinishedCard from "./Components/FinsihedCard/FinishedCard";
+import HighScore from "./Components/HighScores/HighScore";
 
 function App() {
-  const [isStart, setisStart] = useState(true);
-  const [counter, setCounter] = useState(30);
-  const [isQuiz, setisQuiz] = useState(false);
-  const [isFinished, setisFinished] = useState(false);
+  const [counter, setCounter] = useState(10);
   const [score, setScore] = useState(0);
+  const [gameState, setGameState] = useState("start");
+  const [timeEnd, setTimeEnd] = useState(false);
 
   return (
     <div className="App">
       <Header counter={counter} />
       <div className="appContainer">
-        {isStart && <StartCard setisStart={setisStart} setisQuiz={setisQuiz} />}
-        {isQuiz && (
+        {gameState === "start" && <StartCard setGameState={setGameState} />}
+        {gameState === "quiz" && (
           <QuizCard
-            setisQuiz={setisQuiz}
-            setisFinished={setisFinished}
+            setGameState={setGameState}
             score={score}
             setScore={setScore}
             counter={counter}
-            setCounter ={setCounter}
+            setCounter={setCounter}
+            timeEnd={timeEnd}
+            setTimeEnd={setTimeEnd}
           />
         )}
-        {isFinished && <FinishedCard score={score} />}
+        {gameState === "finished" && (
+          <FinishedCard
+            score={score}
+            timeEnd={timeEnd}
+            setGameState={setGameState}
+          />
+        )}
+        {gameState === "highScores" && <HighScore />}
       </div>
     </div>
   );
