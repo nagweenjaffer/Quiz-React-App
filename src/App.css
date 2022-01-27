@@ -6,14 +6,34 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+body {
+  background-color: #030059;
+  color: white;
+}
 .appContainer {
   display: flex;
   border: 2px solid rgb(204, 201, 201);
   width: 600px;
-  height: 200px;
+  height: 300px;
   margin: 120px auto;
   flex-direction: column;
   justify-content: center;
   padding: 25px;
   border-radius: 25px;
+}
+
+.btn {
+  /* width: 70px; */
+  padding: 7px;
+  background-color: #41a950;
+  border: none;
+  margin: 2px;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  font-size: medium;
+}
+.btn:hover {
+  background-color: #359443;
 }

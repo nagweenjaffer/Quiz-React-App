@@ -10,6 +10,7 @@ const FinishedCard = ({ score, timeEnd, setGameState }) => {
     val.push(obj);
 
     localStorage.setItem("high", JSON.stringify(val));
+    initial.current.value = "";
   };
 
   useEffect(() => {
@@ -22,18 +23,21 @@ const FinishedCard = ({ score, timeEnd, setGameState }) => {
     <div>
       {timeEnd ? <h2>oh the time finished !!!</h2> : <h2>All Done !</h2>}
       <p> Your final score is {score}.</p>
-      <p>
-        Enter initials <input type="text" ref={initial} />
+      <p>Enter Your Name </p>
+      <input type="text" ref={initial} />
+      <div>
         <button
           type="submit"
           onClick={() => {
             handleSubmit(initial);
+            setGameState("highScores");
           }}
+          className="btn"
+          style={{ marginTop: 10 }}
         >
           Enter
         </button>
-        <button onClick={() => setGameState("highScores")}>HighScore</button>
-      </p>
+      </div>
     </div>
   );
 };

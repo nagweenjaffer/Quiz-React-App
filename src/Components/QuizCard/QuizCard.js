@@ -46,7 +46,7 @@ const QuizCard = ({
       <h3>{questions[currenetQuestion].questionText}</h3>
       {questions[currenetQuestion].options.map((option, i) => (
         <div className={quizStyle.answersSection} key={i}>
-          <button onClick={() => handleClick(option)}>{option}</button>
+          <button onClick={() => handleClick(option)} className={quizStyle.answer_btn}>{option}</button>
         </div>
       ))}
     </div>

@@ -1,0 +1,9 @@
+.highscore_container {
+  display: flex;
+  /* margin-bottom: 10px; */
+}
+
+.data {
+  width: 100px;
+  margin-bottom: 5px;
+}

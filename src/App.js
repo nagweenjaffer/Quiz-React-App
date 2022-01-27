@@ -16,7 +16,9 @@ function App() {
     <div className="App">
       <Header counter={counter} />
       <div className="appContainer">
-        {gameState === "start" && <StartCard setGameState={setGameState} />}
+        {gameState === "start" && (
+          <StartCard setGameState={setGameState} setCounter={setCounter} />
+        )}
         {gameState === "quiz" && (
           <QuizCard
             setGameState={setGameState}
@@ -35,7 +37,9 @@ function App() {
             setGameState={setGameState}
           />
         )}
-        {gameState === "highScores" && <HighScore />}
+        {gameState === "highScores" && (
+          <HighScore setGameState={setGameState} />
+        )}
       </div>
     </div>
   );

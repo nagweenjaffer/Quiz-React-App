@@ -1,7 +1,11 @@
 import React from "react";
 import cardStyle from "./style.module.css";
+import { useEffect } from "react";
 
-const StartCard = ({ setGameState }) => {
+const StartCard = ({ setGameState, setCounter }) => {
+  useEffect(() => {
+    setCounter(10);
+  }, []);
   return (
     <div className={cardStyle.container}>
       <h1>Coding Quiz Challenge</h1>
@@ -14,9 +18,9 @@ const StartCard = ({ setGameState }) => {
         seconds
       </h5>
       <button
-        className={cardStyle.btn}
+        className="btn"
         onClick={() => {
-          setGameState("quiz")
+          setGameState("quiz");
         }}
       >
         Start Quiz
