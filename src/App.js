@@ -7,7 +7,7 @@ import FinishedCard from "./Components/FinsihedCard/FinishedCard";
 import HighScore from "./Components/HighScores/HighScore";
 
 function App() {
-  const [counter, setCounter] = useState(10);
+  const [counter, setCounter] = useState(30);
   const [score, setScore] = useState(0);
   const [gameState, setGameState] = useState("start");
   const [timeEnd, setTimeEnd] = useState(false);

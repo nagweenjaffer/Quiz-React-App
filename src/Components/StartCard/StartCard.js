@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const StartCard = ({ setGameState, setCounter }) => {
   useEffect(() => {
-    setCounter(10);
+    setCounter(30);
   }, []);
   return (
     <div className={cardStyle.container}>
